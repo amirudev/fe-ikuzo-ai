@@ -5,8 +5,13 @@ applications:
       phases:
         preBuild:
           commands:
+            - node -v
+            - nvm install 20
+            - nvm use 20
+            - node -v
             - corepack enable
-            - corepack prepare pnpm@latest --activate
+            - corepack prepare pnpm@9.12.1 --activate
+            - pnpm -v
             - pnpm install --frozen-lockfile
         build:
           commands:
