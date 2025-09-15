@@ -6,6 +6,8 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  // Generate a self-contained server for hosting providers (helps Amplify SSR)
+  output: 'standalone',
   images: {
     unoptimized: true,
   },
