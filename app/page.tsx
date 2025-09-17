@@ -264,9 +264,39 @@ export default function IkuzoAILanding() {
               </p>
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex flex-wrap justify-center gap-6 mt-8">
+         
+            <div className="mt-4 flex flex-col items-center">
+              <div className="flex items-center space-x-2 mb-2">
+                <span className="text-white/80 text-base font-medium">
+                  Have you joined waitlist?
+                </span>
+                <button
+                  type="button"
+                  className="underline text-primary hover:text-primary/80 transition-colors ml-2"
+                  onClick={() => {
+                    if (window.confirm('This trial is suitable for phone usage and might not as best experience as on mobile app”')) {
+                      window.open('https://master.d1rg98q6y10bmx.amplifyapp.com/', '_blank');
+                    }
+                  }}
+                >
+                  Or try Web Access
+                </button>
+              </div>
               <Button
+                variant="outline"
+                size="lg"
+                className="bg-green-600/80 border-green-400 text-white hover:bg-green-700 hover:border-green-500 px-10 py-4 text-lg rounded-xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl"
+                onClick={() => {
+                  window.open('https://play.google.com/store/apps/details?id=com.sunib.ikuzo', '_blank');
+                }}
+              >
+                <Smartphone className="mr-3 h-6 w-6" />
+                Download on Play Store
+              </Button>
+            </div>
+               {/* Action Buttons */}
+            <div className="flex flex-wrap justify-center gap-6 mt-8">
+              {/* <Button
                 variant="outline"
                 size="lg"
                 className="bg-white/10 border-white/30 text-white hover:bg-white/20 hover:border-white/50 px-10 py-4 text-lg rounded-xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl"
@@ -277,7 +307,7 @@ export default function IkuzoAILanding() {
               >
                 <Smartphone className="mr-3 h-6 w-6" />
                 Install App
-              </Button>
+              </Button> */}
               
               <Button
                 variant="outline"
