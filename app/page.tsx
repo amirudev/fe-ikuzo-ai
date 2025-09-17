@@ -177,9 +177,8 @@ export default function IkuzoAILanding() {
       <header className="bg-[#0B2545] text-white sticky top-0 z-50 backdrop-blur-sm scroll-animate">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center relative overflow-hidden pulse-glow">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary/80"></div>
-              <span className="text-white font-bold text-xl relative z-10">I</span>
+            <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center relative overflow-hidden">
+              <img src="/ikuzo-logo.png" alt="Ikuzo AI Logo" className="w-8 h-8 object-contain" />
             </div>
             <span className="text-2xl font-poppins font-medium tracking-wider">Ikuzo AI</span>
             <Badge variant="secondary" className="text-xs bg-primary/20 text-white border-primary/30">
@@ -208,9 +207,6 @@ export default function IkuzoAILanding() {
           <div className="absolute inset-0 bg-[#0B2545]/85"></div>
         </div>
 
-        <div className="absolute top-20 right-10 z-20">
-          <img src="/cute-ai-robot-mascot-transparent.jpg" alt="Ikuzo AI Mascot" className="w-24 h-24 mascot-float" />
-        </div>
 
         {/* Enhanced 3D floating elements */}
         <div className="absolute inset-0">
@@ -252,19 +248,67 @@ export default function IkuzoAILanding() {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center scroll-animate stagger-4">
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-white px-10 py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-              onClick={() => document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" })}
-            >
-              Join the Waitlist
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <p className="text-sm text-white/70 flex items-center space-x-2">
-              <Heart className="h-4 w-4 text-primary" />
-              <span>1,000+ people building better mental well-being</span>
-            </p>
+          <div className="flex flex-col items-center space-y-6 scroll-animate stagger-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-white px-10 py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                onClick={() => document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" })}
+              >
+                Join the Waitlist
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <p className="text-sm text-white/70 flex items-center space-x-2">
+                <Heart className="h-4 w-4 text-primary" />
+                <span>1,000+ people building better mental well-being</span>
+              </p>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex flex-wrap justify-center gap-6 mt-8">
+              <Button
+                variant="outline"
+                size="lg"
+                className="bg-white/10 border-white/30 text-white hover:bg-white/20 hover:border-white/50 px-10 py-4 text-lg rounded-xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl"
+                onClick={() => {
+                  // Add your app store links here
+                  window.open('https://apps.apple.com/app/ikuzo-ai', '_blank');
+                }}
+              >
+                <Smartphone className="mr-3 h-6 w-6" />
+                Install App
+              </Button>
+              
+              <Button
+                variant="outline"
+                size="lg"
+                className="bg-white/10 border-white/30 text-white hover:bg-white/20 hover:border-white/50 px-10 py-4 text-lg rounded-xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl"
+                onClick={() => {
+                  // Add your documentation link here
+                  window.open('https://www.canva.com/design/DAGy0jNmwbk/cVFdol2O_NvcCsBSFSKAxA/view?utm_content=DAGy0jNmwbk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h0bf637bea7', '_blank');
+                }}
+              >
+                <svg className="mr-3 h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Documentation
+              </Button>
+              
+              <Button
+                variant="outline"
+                size="lg"
+                className="bg-white/10 border-white/30 text-white hover:bg-white/20 hover:border-white/50 px-10 py-4 text-lg rounded-xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl"
+                onClick={() => {
+                  // Add your Medium link here
+                  window.open('https://medium.com/@rafkiyuda/ikuzo-ai-a-multi-step-ai-agent-on-tidb-turning-daily-moods-into-context-aware-actions-cf2e62695282', '_blank');
+                }}
+              >
+                <div className="mr-3 w-6 h-6 bg-white rounded-full flex items-center justify-center">
+                  <span className="text-black text-sm font-bold">M</span>
+                </div>
+                Medium
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -281,38 +325,41 @@ export default function IkuzoAILanding() {
             </p>
           </div>
 
-          <div className="absolute top-10 left-10 z-20">
-            <img
-              src="/cute-ai-robot-mascot-transparent.jpg"
-              alt="Ikuzo AI Mascot"
-              className="w-16 h-16 mascot-float opacity-60"
-            />
-          </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             <Card className="text-center p-8 border-red-200 bg-white/80 backdrop-blur-sm scroll-animate stagger-1 scale-in hover:shadow-xl transition-all duration-300">
               <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="h-8 w-8 text-red-600" />
+                <Users className="h-8 w-8 text-red-600" />
               </div>
-              <h3 className="text-3xl font-bold text-red-600 mb-2">970M</h3>
-              <p className="text-gray-600 font-medium">People with mental health disorders globally (WHO, 2022)</p>
+              <h3 className="text-3xl font-bold text-red-600 mb-2">1 in 8</h3>
+              <p className="text-gray-600 font-medium text-sm">
+                People live with a mental disorder, with anxiety and depression the most common
+                <br />
+                <span className="text-xs text-gray-500 mt-1 block">(WHO, Mental Disorders Fact Sheet, 2019)</span>
+              </p>
             </Card>
 
             <Card className="text-center p-8 border-orange-200 bg-white/80 backdrop-blur-sm scroll-animate stagger-2 scale-in hover:shadow-xl transition-all duration-300">
               <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Users className="h-8 w-8 text-orange-600" />
+                <AlertTriangle className="h-8 w-8 text-orange-600" />
               </div>
-              <h3 className="text-3xl font-bold text-orange-600 mb-2">1 in 4</h3>
-              <p className="text-gray-600 font-medium">People will experience mental health issues in their lifetime</p>
+              <h3 className="text-3xl font-bold text-orange-600 mb-2">720K+</h3>
+              <p className="text-gray-600 font-medium text-sm">
+                Deaths per year: Suicide is the 3rd leading cause of death among ages 15–29
+                <br />
+                <span className="text-xs text-gray-500 mt-1 block">(WHO, Suicide Fact Sheet, 2025)</span>
+              </p>
             </Card>
 
             <Card className="text-center p-8 border-yellow-200 bg-white/80 backdrop-blur-sm scroll-animate stagger-3 scale-in hover:shadow-xl transition-all duration-300">
               <div className="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <AlertTriangle className="h-8 w-8 text-yellow-600" />
+                <TrendingUp className="h-8 w-8 text-yellow-600" />
               </div>
-              <h3 className="text-3xl font-bold text-yellow-600 mb-2">75%</h3>
-              <p className="text-gray-600 font-medium">
-                Of people in low-income countries receive no treatment for depression
+              <h3 className="text-3xl font-bold text-yellow-600 mb-2">$1T</h3>
+              <p className="text-gray-600 font-medium text-sm">
+                12 billion workdays lost annually due to depression and anxiety; ~15% of working-age adults affected
+                <br />
+                <span className="text-xs text-gray-500 mt-1 block">(WHO, Mental Health at Work, 2024)</span>
               </p>
             </Card>
 
@@ -320,8 +367,12 @@ export default function IkuzoAILanding() {
               <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <Heart className="h-8 w-8 text-red-600" />
               </div>
-              <h3 className="text-3xl font-bold text-red-600 mb-2">$1T</h3>
-              <p className="text-gray-600 font-medium">Annual global cost of depression and anxiety disorders</p>
+              <h3 className="text-3xl font-bold text-red-600 mb-2">~2%</h3>
+              <p className="text-gray-600 font-medium text-sm">
+                Of health budgets: Median government spending on mental health has stalled, services remain underfunded
+                <br />
+                <span className="text-xs text-gray-500 mt-1 block">(WHO, Mental Health Policy & Financing, 2024–2025)</span>
+              </p>
             </Card>
           </div>
 
@@ -484,133 +535,186 @@ export default function IkuzoAILanding() {
         </div>
       </section>
 
-      {/* Enhanced Mobile Experience Section */}
+      {/* Key Features Section */}
       <section className="section-snap py-20 bg-background flex items-center">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 scroll-animate fade-up">
-            <Badge className="mb-4 bg-primary/10 text-white border-primary/20">📱 Mobile Experience</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">Beautiful Mobile Interface</h2>
+            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">✨ Key Features</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">How Ikuzo AI Works</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Express your feelings naturally through our intuitive mobile app designed for moments when you need
-              support most.
+              Four simple ways Ikuzo AI transforms your daily mood into meaningful, actionable support.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8 scroll-animate slide-left">
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4 p-6 bg-muted/50 rounded-2xl hover:bg-muted/70 transition-all duration-300">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center pulse-glow">
-                    <Smartphone className="h-6 w-6 text-primary" />
+          <div className="space-y-20">
+            {/* Feature 1: Check in, your way */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="scroll-animate slide-left">
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-3 mb-6">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                      <Smile className="h-6 w-6 text-primary" />
+                    </div>
+                    <h3 className="text-3xl font-bold text-foreground">Check in, your way</h3>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Intuitive Design</h3>
-                    <p className="text-foreground">
-                      Clean, accessible interface that works when you're feeling low - no overwhelming options or
-                      complex navigation
-                    </p>
-                  </div>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    A 30-second mood check-in that meets you where you are. Tap an emoji, type a line of text, speak a few words (we transcribe), or doodle when words won't come. It's quick, gentle, and non-judgmental—no diagnosis, just a simple way to say how you feel so the app can support you next.
+                  </p>
                 </div>
-                <div className="flex items-start space-x-4 p-6 bg-muted/50 rounded-2xl hover:bg-muted/70 transition-all duration-300">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center pulse-glow">
-                    <Smile className="h-6 w-6 text-primary" />
+              </div>
+              <div className="scroll-animate slide-right">
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="relative">
+                    <div className="w-32 h-64 bg-gradient-to-br from-gray-900 to-gray-800 rounded-[1.5rem] p-1.5 shadow-xl float-animation">
+                      <div className="w-full h-full bg-white rounded-[1.2rem] overflow-hidden">
+                        <img
+                          src="/check-in-1.png"
+                          alt="Emoji Input"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Multi-Modal Input</h3>
-                    <p className="text-foreground">
-                      Express through emoji, voice, text, or simple doodles - whatever feels right in the moment
-                    </p>
+                  <div className="relative">
+                    <div className="w-32 h-64 bg-gradient-to-br from-primary/20 to-primary/40 rounded-[1.5rem] p-1.5 shadow-xl float-animation" style={{animationDelay: '-1s'}}>
+                      <div className="w-full h-full bg-white rounded-[1.2rem] overflow-hidden">
+                        <img
+                          src="/check-in-2.png"
+                          alt="Voice Input"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start space-x-4 p-6 bg-muted/50 rounded-2xl hover:bg-muted/70 transition-all duration-300">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center pulse-glow">
-                    <Target className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Personalized Suggestions</h3>
-                    <p className="text-foreground">
-                      Context-aware recommendations based on your location, weather, and what works in your community
-                    </p>
+                  <div className="relative">
+                    <div className="w-32 h-64 bg-gradient-to-br from-green-200 to-green-300 rounded-[1.5rem] p-1.5 shadow-xl float-animation" style={{animationDelay: '-2s'}}>
+                      <div className="w-full h-full bg-white rounded-[1.2rem] overflow-hidden">
+                        <img
+                          src="/check-in-3.png"
+                          alt="Text Input"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="scroll-animate slide-right">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 lg:gap-6">
-                {/* Phone 1 - Mood Input */}
-                <div className="relative mx-auto">
-                  <div className="w-48 h-96 sm:w-52 sm:h-[420px] lg:w-56 lg:h-[450px] bg-gradient-to-br from-gray-900 to-gray-800 rounded-[2rem] p-2 shadow-2xl float-animation">
-                    <div className="w-full h-full bg-white rounded-[1.5rem] overflow-hidden relative">
-                      <img
-                        src="/mobile-mood-input-screen.jpg"
-                        alt="Ikuzo AI Mood Input Interface"
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-20 h-3 bg-black rounded-b-lg"></div>
+            {/* Feature 2: One Tap to the Right Place */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="scroll-animate slide-right order-2 lg:order-1">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="relative">
+                    <div className="w-40 h-80 bg-gradient-to-br from-blue-200 to-blue-300 rounded-[1.5rem] p-1.5 shadow-xl float-animation">
+                      <div className="w-full h-full bg-white rounded-[1.2rem] overflow-hidden">
+                        <img
+                          src="/one-tap-1.png"
+                          alt="Location Services"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
                     </div>
                   </div>
-                  <p className="text-center text-sm text-muted-foreground mt-3 font-medium">Mood Input</p>
+                  <div className="relative">
+                    <div className="w-40 h-80 bg-gradient-to-br from-purple-200 to-purple-300 rounded-[1.5rem] p-1.5 shadow-xl float-animation" style={{animationDelay: '-1s'}}>
+                      <div className="w-full h-full bg-white rounded-[1.2rem] overflow-hidden">
+                        <img
+                          src="/one-tap-2.png"
+                          alt="Nearby Places"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-
-                {/* Phone 2 - AI Processing */}
-                <div className="relative mx-auto">
-                  <div className="w-48 h-96 sm:w-52 sm:h-[420px] lg:w-56 lg:h-[450px] bg-gradient-to-br from-primary/20 to-primary/40 rounded-[2rem] p-2 shadow-2xl float-animation">
-                    <div className="w-full h-full bg-white rounded-[1.5rem] overflow-hidden relative">
-                      <img
-                        src="/mobile-ai-processing-screen.jpg"
-                        alt="Ikuzo AI Processing Interface"
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-20 h-3 bg-black rounded-b-lg"></div>
+              </div>
+              <div className="scroll-animate slide-left order-1 lg:order-2">
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-3 mb-6">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                      <Target className="h-6 w-6 text-primary" />
                     </div>
+                    <h3 className="text-3xl font-bold text-foreground">One Tap to the Right Place</h3>
                   </div>
-                  <p className="text-center text-sm text-muted-foreground mt-3 font-medium">AI Analysis</p>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    Not every solution is green parks. Sometimes relief is a quiet café, a library corner, or even a calm indoor walk. With one tap, IKUZO connects feelings to nearby supportive spaces—tailored to interests, weather, and context. Fast, safe, and practical: the shortest path from where you are to where you feel better.
+                  </p>
                 </div>
+              </div>
+            </div>
 
-                {/* Phone 3 - Suggestions */}
-                <div className="relative mx-auto">
-                  <div className="w-48 h-96 sm:w-52 sm:h-[420px] lg:w-56 lg:h-[450px] bg-gradient-to-br from-green-200 to-green-300 rounded-[2rem] p-2 shadow-2xl float-animation">
-                    <div className="w-full h-full bg-white rounded-[1.5rem] overflow-hidden relative">
-                      <img
-                        src="/mobile-suggestions-screen.jpg"
-                        alt="Ikuzo AI Suggestions Interface"
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-20 h-3 bg-black rounded-b-lg"></div>
+            {/* Feature 3: See Stories, Feel Less Alone */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="scroll-animate slide-left">
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-3 mb-6">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                      <Users className="h-6 w-6 text-primary" />
                     </div>
+                    <h3 className="text-3xl font-bold text-foreground">See Stories, Feel Less Alone</h3>
                   </div>
-                  <p className="text-center text-sm text-muted-foreground mt-3 font-medium">Personalized Actions</p>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    Reading short, anonymous snippets from others in similar situations shows you're not alone. IKUZO highlights what worked for them—simple, real actions that eased their mood. These shared experiences transform empathy into inspiration, guiding you toward your own next step.
+                  </p>
                 </div>
-
-                {/* Phone 4 - Progress Tracking */}
-                <div className="relative mx-auto">
-                  <div className="w-48 h-96 sm:w-52 sm:h-[420px] lg:w-56 lg:h-[450px] bg-gradient-to-br from-blue-200 to-blue-300 rounded-[2rem] p-2 shadow-2xl float-animation">
-                    <div className="w-full h-full bg-white rounded-[1.5rem] overflow-hidden relative">
-                      <img
-                        src="/mobile-progress-tracking-screen.jpg"
-                        alt="Ikuzo AI Progress Tracking Interface"
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-20 h-3 bg-black rounded-b-lg"></div>
+              </div>
+              <div className="scroll-animate slide-right">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="relative">
+                    <div className="w-40 h-80 bg-gradient-to-br from-orange-200 to-orange-300 rounded-[1.5rem] p-1.5 shadow-xl float-animation">
+                      <div className="w-full h-full bg-white rounded-[1.2rem] overflow-hidden">
+                        <img
+                          src="/stories-1.png"
+                          alt="Community Stories"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
                     </div>
                   </div>
-                  <p className="text-center text-sm text-muted-foreground mt-3 font-medium">Progress Tracking</p>
+                  <div className="relative">
+                    <div className="w-40 h-80 bg-gradient-to-br from-pink-200 to-pink-300 rounded-[1.5rem] p-1.5 shadow-xl float-animation" style={{animationDelay: '-1s'}}>
+                      <div className="w-full h-full bg-white rounded-[1.2rem] overflow-hidden">
+                        <img
+                          src="/stories-2.png"
+                          alt="Shared Experiences"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
+            </div>
 
-                {/* Phone 5 - Community */}
-                <div className="relative mx-auto">
-                  <div className="w-48 h-96 sm:w-52 sm:h-[420px] lg:w-56 lg:h-[450px] bg-gradient-to-br from-purple-200 to-purple-300 rounded-[2rem] p-2 shadow-2xl float-animation">
-                    <div className="w-full h-full bg-white rounded-[1.5rem] overflow-hidden relative">
-                      <img
-                        src="/mobile-community-screen.jpg"
-                        alt="Ikuzo AI Community Interface"
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-20 h-3 bg-black rounded-b-lg"></div>
+            {/* Feature 4: Buddy AI Consultation */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="scroll-animate slide-right order-2 lg:order-1">
+                <div className="flex justify-center">
+                  <div className="relative">
+                    <div className="w-48 h-96 bg-gradient-to-br from-indigo-200 to-indigo-300 rounded-[2rem] p-2 shadow-2xl float-animation">
+                      <div className="w-full h-full bg-white rounded-[1.5rem] overflow-hidden">
+                        <img
+                          src="/buddy-ai.jpeg"
+                          alt="Buddy AI Chat"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
                     </div>
                   </div>
-                  <p className="text-center text-sm text-muted-foreground mt-3 font-medium">Community Support</p>
+                </div>
+              </div>
+              <div className="scroll-animate slide-left order-1 lg:order-2">
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-3 mb-6">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                      <Brain className="h-6 w-6 text-primary" />
+                    </div>
+                    <h3 className="text-3xl font-bold text-foreground">Buddy: A Caring AI Consultation</h3>
+                  </div>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    Buddy is IKUZO's empathetic chat companion that turns what you share into safe, simple next steps—based on WHO Psychological First Aid (Look–Listen–Link). It listens without judgment, gives plain-language support (never medical claims), and if it detects serious risk, it stops and redirects you to the right crisis helpline. Privacy-first, human, and always just one message away.
+                  </p>
                 </div>
               </div>
             </div>
@@ -629,13 +733,6 @@ export default function IkuzoAILanding() {
             </p>
           </div>
 
-          <div className="absolute top-20 right-20 z-20">
-            <img
-              src="/cute-ai-robot-mascot-transparent.jpg"
-              alt="Ikuzo AI Mascot"
-              className="w-20 h-20 mascot-float opacity-80"
-            />
-          </div>
 
           {/* Architecture Flow */}
           <div className="max-w-6xl mx-auto">
@@ -680,45 +777,271 @@ export default function IkuzoAILanding() {
               </Card>
             </div>
 
-            {/* Enhanced Tech Stack with logos */}
-            <div className="bg-muted/50 rounded-2xl p-8 scroll-animate stagger-4 fade-up">
-              <h3 className="text-2xl font-bold text-center mb-8">Powered by Modern AI Stack</h3>
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-                <div className="text-center group hover:scale-105 transition-transform duration-300">
-                  <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg group-hover:shadow-xl transition-shadow">
-                    <img src="/logos/dify-logo-transparent.jpg" alt="Dify" className="w-10 h-10 object-contain" />
-                  </div>
-                  <p className="font-medium text-sm text-foreground">Dify Agent</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Technical Architecture Section */}
+      <section className="section-snap py-20 bg-gradient-to-br from-gray-50 to-blue-50 flex items-center">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 scroll-animate fade-up">
+            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">🏗️ Technical Architecture</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">System Architecture & Flow</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Explore the technical implementation behind Ikuzo AI's multi-step agent system and data flow architecture.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Architecture Diagram */}
+            <div className="scroll-animate slide-left">
+              <Card className="p-8 hover:shadow-xl transition-all duration-300">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold mb-4 text-foreground">System Architecture</h3>
+                  <p className="text-muted-foreground mb-6">
+                    High-level overview of Ikuzo AI's technical stack and component interactions
+                  </p>
                 </div>
-                <div className="text-center group hover:scale-105 transition-transform duration-300">
-                  <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg group-hover:shadow-xl transition-shadow">
-                    <img src="/logos/tidb-logo-transparent.jpg" alt="TiDB" className="w-10 h-10 object-contain" />
-                  </div>
-                  <p className="font-medium text-sm text-foreground">TiDB Serverless</p>
+                
+                {/* Architecture Image */}
+                <div className="mb-6">
+                  <img
+                    src="/architecture-ikuzo-ai.png"
+                    alt="Ikuzo AI System Architecture"
+                    className="w-full h-auto rounded-lg shadow-lg"
+                  />
                 </div>
-                <div className="text-center group hover:scale-105 transition-transform duration-300">
-                  <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg group-hover:shadow-xl transition-shadow">
-                    <img src="/logos/kimi-ai-logo-transparent.jpg" alt="Kimi AI" className="w-10 h-10 object-contain" />
+
+                {/* Architecture Description */}
+                <div className="p-4 bg-muted/50 rounded-lg">
+                  <h5 className="font-semibold text-foreground mb-3">System Architecture:</h5>
+                  <div className="text-sm text-muted-foreground space-y-3">
+                    <div>
+                      <strong className="text-foreground">Client (Flutter, Dart, TypeScript)</strong>
+                      <p className="mt-1">Multi-platform application for mood check-ins (emoji/text/voice/doodle) and displaying suggestion cards. Deep-link to maps.</p>
+                    </div>
+                    <div>
+                      <strong className="text-foreground">Server (Go + Gin)</strong>
+                      <p className="mt-1">Lightweight gateway that manages sessions, preferences, and calls AI orchestration. Handles optional verification (geofence/photo-hash) and minimal logging.</p>
+                    </div>
+                    <div>
+                      <strong className="text-foreground">AI & Orchestration (Dify, Kimi AI, Gemini, Response Parser)</strong>
+                      <p className="mt-1">Dify manages multi-step flow: fetch weather → query TiDB → ranking → request Kimi/Gemini to compose structured response (JSON). Response Parser ensures format/guardrails (WHO-tone, not diagnosis).</p>
+                    </div>
+                    <div>
+                      <strong className="text-foreground">Database (TiDB Serverless)</strong>
+                      <p className="mt-1">Single place for vector store + full-text: WHO guidance snippets, anonymous stories, and place/activity metadata. Supports filters (language, tags, distance, opening hours).</p>
+                    </div>
+                    <div>
+                      <strong className="text-foreground">External Data & API</strong>
+                      <p className="mt-1">OpenWeather (weather context), Google Maps/Places (route links & location details), WHO Public Guidance (source content "dos & don'ts").</p>
+                    </div>
+                    <div>
+                      <strong className="text-foreground">Deployment (AWS Cloud, EC2)</strong>
+                      <p className="mt-1">Runs Go services and agent components; secrets stored securely, basic autoscale, observability/log audit.</p>
+                    </div>
                   </div>
-                  <p className="font-medium text-sm text-foreground">Kimi AI</p>
                 </div>
-                <div className="text-center group hover:scale-105 transition-transform duration-300">
-                  <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg group-hover:shadow-xl transition-shadow">
-                    <img
-                      src="/logos/openweather-logo-transparent.jpg"
-                      alt="OpenWeather"
-                      className="w-10 h-10 object-contain"
-                    />
-                  </div>
-                  <p className="font-medium text-sm text-foreground">OpenWeather</p>
+              </Card>
+            </div>
+
+            {/* Flow Diagram */}
+            <div className="scroll-animate slide-right">
+              <Card className="p-8 hover:shadow-xl transition-all duration-300">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold mb-4 text-foreground">Multi-AI Agents Workflow</h3>
+                  <p className="text-muted-foreground mb-6">
+                    Orchestrated multi-step AI agents working in sequence for optimal results
+                  </p>
                 </div>
-                <div className="text-center group hover:scale-105 transition-transform duration-300">
-                  <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg group-hover:shadow-xl transition-shadow">
-                    <img src="/logos/flutter-logo-transparent.jpg" alt="Flutter" className="w-10 h-10 object-contain" />
+                
+                {/* Multi-AI Agents Image */}
+                <div className="mb-6">
+                  <img
+                    src="/multi-ai-agents.png"
+                    alt="Ikuzo AI Multi-AI Agents Workflow"
+                    className="w-full h-auto rounded-lg shadow-lg"
+                  />
+                </div>
+
+                {/* Multi-AI Agents Description */}
+                <div className="p-4 bg-muted/50 rounded-lg">
+                  <h5 className="font-semibold text-foreground mb-3">AI Agents Workflow:</h5>
+                  <div className="text-sm text-muted-foreground space-y-3">
+                    <div>
+                      <strong className="text-foreground">Input & Enrichment Agent</strong>
+                      <p className="mt-1">Receives user stories (emoji/text/voice/doodle→text), then optionally adds context from Weather API and Image Descriptor.</p>
+                    </div>
+                    <div>
+                      <strong className="text-foreground">Embedding Agent</strong>
+                      <p className="mt-1">Converts stories & context into vectors and stores/queries them in TiDB (Vector Database).</p>
+                    </div>
+                    <div>
+                      <strong className="text-foreground">Retrieval Agent</strong>
+                      <p className="mt-1">Performs Vector Search in TiDB to find the most relevant knowledge/history snippets.</p>
+                    </div>
+                    <div>
+                      <strong className="text-foreground">Places Agent (optional)</strong>
+                      <p className="mt-1">Calls Places API for nearby location options that match the context.</p>
+                    </div>
+                    <div>
+                      <strong className="text-foreground">Reasoning/Writer Agent (Kimi)</strong>
+                      <p className="mt-1">Combines retrieval results + context, then writes structured brief suggestions (reasoning & small steps).</p>
+                    </div>
+                    <div>
+                      <strong className="text-foreground">Response</strong>
+                      <p className="mt-1">IKUZO displays recommendation cards to the user.</p>
+                    </div>
+                    <div className="mt-4 p-3 bg-primary/10 rounded-lg">
+                      <p className="text-xs text-primary font-medium">
+                        <strong>Note:</strong> All steps are orchestrated in sequence—multi-step—so each agent focuses on one task, resulting in fast, measurable, and auditable outcomes.
+                      </p>
+                    </div>
                   </div>
-                  <p className="font-medium text-sm text-foreground">Flutter App</p>
+                </div>
+              </Card>
+            </div>
+          </div>
+
+          {/* Technical Details */}
+          <div className="mt-16 scroll-animate fade-up">
+            <Card className="p-8 bg-white/80 backdrop-blur-sm">
+              <h3 className="text-2xl font-bold text-center mb-8 text-foreground">Technical Implementation Details</h3>
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <Database className="h-6 w-6 text-primary" />
+                  </div>
+                  <h4 className="font-bold text-foreground mb-2">Vector Search</h4>
+                  <p className="text-sm text-muted-foreground">
+                    TiDB's hybrid search combines semantic similarity with traditional full-text search for optimal results
+                  </p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <Brain className="h-6 w-6 text-primary" />
+                  </div>
+                  <h4 className="font-bold text-foreground mb-2">Multi-Step Agent</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Dify orchestrates complex workflows with context awareness and structured output generation
+                  </p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <Target className="h-6 w-6 text-primary" />
+                  </div>
+                  <h4 className="font-bold text-foreground mb-2">Context Integration</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Real-time weather and location data enhance suggestion relevance and personalization
+                  </p>
                 </div>
               </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* User Flow Section */}
+      <section className="section-snap py-20 bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 scroll-animate fade-up">
+            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">👤 User Experience Flow</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">How Users Interact with Ikuzo AI</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Discover the seamless user journey from mood input to actionable recommendations through our intuitive interface.
+            </p>
+          </div>
+
+          <div className="max-w-5xl mx-auto">
+            <div className="scroll-animate scale-in">
+              <Card className="p-8 hover:shadow-xl transition-all duration-300">
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold mb-4 text-foreground">Complete User Flow</h3>
+                  <p className="text-muted-foreground">
+                    From initial mood check-in to receiving personalized, actionable suggestions
+                  </p>
+                </div>
+                
+                {/* User Flow Image */}
+                <div className="mb-8">
+                  <img
+                    src="/user-flow-ikuzo-AI.png"
+                    alt="Ikuzo AI User Flow Process"
+                    className="w-full h-auto rounded-lg shadow-lg"
+                  />
+                </div>
+
+                {/* User Flow Description */}
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div className="space-y-4">
+                    <h4 className="font-semibold text-foreground mb-3">User Journey Steps:</h4>
+                    <div className="space-y-3">
+                      <div className="flex items-start space-x-3">
+                        <div className="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</div>
+                        <div>
+                          <strong className="text-foreground">Mood Input</strong>
+                          <p className="text-sm text-muted-foreground">User expresses their current mood through emoji, text, voice, or doodle</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <div className="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</div>
+                        <div>
+                          <strong className="text-foreground">Story Sharing</strong>
+                          <p className="text-sm text-muted-foreground">User shares their story or context about their current situation</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <div className="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</div>
+                        <div>
+                          <strong className="text-foreground">AI Processing</strong>
+                          <p className="text-sm text-muted-foreground">Multi-step AI agents analyze input and context to generate recommendations</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <div className="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">4</div>
+                        <div>
+                          <strong className="text-foreground">Personalized Suggestions</strong>
+                          <p className="text-sm text-muted-foreground">User receives actionable, context-aware recommendations</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <h4 className="font-semibold text-foreground mb-3">Key Features:</h4>
+                    <div className="space-y-3">
+                      <div className="flex items-start space-x-3">
+                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                        <div>
+                          <strong className="text-foreground">Multi-Modal Input</strong>
+                          <p className="text-sm text-muted-foreground">Support for various input methods to accommodate different user preferences</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                        <div>
+                          <strong className="text-foreground">Context Awareness</strong>
+                          <p className="text-sm text-muted-foreground">Considers weather, location, and personal history for relevant suggestions</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                        <div>
+                          <strong className="text-foreground">Actionable Steps</strong>
+                          <p className="text-sm text-muted-foreground">Provides specific, doable actions rather than generic advice</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                        <div>
+                          <strong className="text-foreground">Progress Tracking</strong>
+                          <p className="text-sm text-muted-foreground">Helps users track their mental well-being journey over time</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Card>
             </div>
           </div>
         </div>
@@ -741,7 +1064,7 @@ export default function IkuzoAILanding() {
                 <iframe
                   width="100%"
                   height="100%"
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&mute=0&controls=1&origin=https://v0.app&playsinline=1&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
+                  src="https://www.youtube.com/embed/QMU527O2Pik?autoplay=0&mute=0&controls=1&origin=https://localhost:3000&playsinline=1&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
                   title="Ikuzo AI Demo Video"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -755,6 +1078,19 @@ export default function IkuzoAILanding() {
                 <p className="text-white/70">
                   Watch how Ikuzo AI understands context and provides personalized suggestions
                 </p>
+                <div className="mt-4">
+                  <a
+                    href="https://youtu.be/QMU527O2Pik?si=eSOaKbPdyyPdG1YE"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-300"
+                  >
+                    <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                    Watch on YouTube
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -806,7 +1142,7 @@ export default function IkuzoAILanding() {
               {/* Mascot */}
               <div className="relative">
                 <img
-                  src="/cute-ai-robot-mascot-transparent.jpg"
+                  src="/ikuzo-logo.png"
                   alt="Ikuzo AI Mascot"
                   className="w-48 h-48 mascot-float drop-shadow-2xl"
                 />
@@ -825,59 +1161,17 @@ export default function IkuzoAILanding() {
               </div>
 
               {/* Social Links */}
-              <div className="flex flex-wrap justify-center gap-4">
+              <div className="flex justify-center">
                 <a
-                  href="https://medium.com/@ikuzoai"
+                  href="https://medium.com/@rafkiyuda/ikuzo-ai-a-multi-step-ai-agent-on-tidb-turning-daily-moods-into-context-aware-actions-cf2e62695282"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-2 bg-white/80 hover:bg-white border border-gray-200 rounded-full px-6 py-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                  className="flex items-center space-x-3 bg-white/80 hover:bg-white border border-gray-200 rounded-full px-8 py-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
                 >
-                  <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center">
-                    <span className="text-white text-xs font-bold">M</span>
+                  <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center">
+                    <span className="text-white text-sm font-bold">M</span>
                   </div>
-                  <span className="font-medium text-gray-700">Medium</span>
-                </a>
-
-                <a
-                  href="https://instagram.com/ikuzoai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-full px-6 py-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-                >
-                  <div className="w-5 h-5">
-                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
-                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                    </svg>
-                  </div>
-                  <span className="font-medium">Instagram</span>
-                </a>
-
-                <a
-                  href="https://twitter.com/ikuzoai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-2 bg-blue-500 hover:bg-blue-600 text-white rounded-full px-6 py-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-                >
-                  <div className="w-5 h-5">
-                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
-                      <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-                    </svg>
-                  </div>
-                  <span className="font-medium">Twitter</span>
-                </a>
-
-                <a
-                  href="https://linkedin.com/company/ikuzoai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-2 bg-blue-700 hover:bg-blue-800 text-white rounded-full px-6 py-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-                >
-                  <div className="w-5 h-5">
-                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                    </svg>
-                  </div>
-                  <span className="font-medium">LinkedIn</span>
+                  <span className="font-medium text-gray-700 text-lg">Read on Medium</span>
                 </a>
               </div>
             </div>
@@ -892,9 +1186,6 @@ export default function IkuzoAILanding() {
           <div className="absolute bottom-20 left-20 w-32 h-32 bg-white/5 rounded-full blur-2xl animate-pulse delay-1000"></div>
         </div>
 
-        <div className="absolute bottom-10 right-10 z-20">
-          <img src="/cute-ai-robot-mascot-transparent.jpg" alt="Ikuzo AI Mascot" className="w-32 h-32 mascot-float" />
-        </div>
 
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-3xl mx-auto scroll-animate fade-up">
@@ -960,7 +1251,7 @@ export default function IkuzoAILanding() {
             <div className="md:col-span-2">
               <div className="flex items-center space-x-3 mb-6">
                 <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center pulse-glow">
-                  <span className="text-white font-bold text-xl">I</span>
+                  <img src="/ikuzo-logo.png" alt="Ikuzo AI Logo" className="w-8 h-8 object-contain" />
                 </div>
                 <span className="text-2xl font-poppins font-medium tracking-wider">Ikuzo AI</span>
               </div>
@@ -1008,7 +1299,7 @@ export default function IkuzoAILanding() {
 
           <div className="border-t border-white/10 pt-8 text-center">
             <p className="text-white/60">
-              &copy; 2024 Ikuzo AI. All rights reserved. Built with care for mental well-being.
+              &copy; 2025 Ikuzo AI. All rights reserved. Built with care for mental well-being.
             </p>
             <p className="text-white/50 text-sm mt-2">
               Disclaimer: Ikuzo AI provides supportive suggestions, not clinical diagnosis or treatment.
